@@ -1,0 +1,422 @@
+/* SWB Stele Prototyp · Tokens aus dem Live-Designsystem release.stadtwerke-bonn.de (main.css, 18.09.2026)
+   Siehe 30_Prototyp/assets/swb-website/DESIGNSYSTEM.md. Maße für 1080 x 1920 etwa Faktor 1.8 gegenüber Web. */
+@font-face { font-family: 'Rajdhani'; font-weight: 400; src: url('./assets/fonts-swb/rajdhani-400.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'Rajdhani'; font-weight: 500; src: url('./assets/fonts-swb/rajdhani-500.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'Rajdhani'; font-weight: 600; src: url('./assets/fonts-swb/rajdhani-600.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'Rajdhani'; font-weight: 700; src: url('./assets/fonts-swb/rajdhani-700.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'Source Sans 3 Variable'; font-weight: 200 900; src: url('./assets/fonts-swb/source-sans-3-latin.woff2') format('woff2-variations'); font-display: swap;
+  unicode-range: U+00??, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Source Sans 3 Variable'; font-weight: 200 900; src: url('./assets/fonts-swb/source-sans-3-latin-ext.woff2') format('woff2-variations'); font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+:root {
+  /* color/brand */
+  --brand-50: #edfafb; --brand-100: #d5f1f3; --brand-200: #b7e1e6; --brand-300: #8ecfd7; --brand-400: #50c1ca;
+  --brand-500: #00adba; --brand-600: #009ba9; --brand-700: #007f8d; --brand-800: #00636f; --brand-900: #004e58;
+  /* color/accent */
+  --accent-100: #f1ffb9; --accent-200: #e5ff7d; --accent-300: #d7f16f; --accent-400: #c6e54b; --accent-500: #b7d92e;
+  --accent-600: #a2c617; --accent-700: #89ab00; --accent-800: #6e8805; --accent-900: #506400;
+  --on-accent: #2c3800;   /* Schrift und Symbol auf Lime: dunkler als accent-900, sonst zu hell */
+  /* color/neutral */
+  --n-100: #f4f4f4; --n-200: #e5e5e5; --n-300: #d3d3d3; --n-400: #bebebe; --n-500: #ababab;
+  --n-600: #8e8e8e; --n-700: #666666; --n-800: #484848; --n-900: #2d2d2d;
+  --harmony-800: #006eab; --harmony-900: #005c93; --success-500: #40c478; --success-800: #007633; --alert-700: #c62d2d;
+
+  /* Rollen (DS) */
+  --text-color: var(--n-900); --color-icon: var(--brand-700);
+  /* Look-Variablen (Standard: dunkel). Flächen = Karten, Kacheln, Sheets; Controls = Antwortflächen, Stufen. */
+  --stage: #00343b; --stage-solid: #00343b;
+  --gutter: 64px;          /* Außenrand der Bühne */
+  --nav-top: 1690px;       /* Oberkante der Leiste auf der 1920er Bühne */
+  --nav-clear: 250px;      /* Freiraum, den Seiten unten für die Leiste lassen */
+  --fg: #fff; --fg2: rgba(255, 255, 255, .84); --fg3: rgba(255, 255, 255, .62); --kick: var(--brand-300); --rule: rgba(255, 255, 255, .2);
+  --surface: var(--brand-800); --surface-fg: #fff; --surface-fg2: rgba(255, 255, 255, .84); --surface-fg3: rgba(255, 255, 255, .74); --surface-kick: var(--brand-300); --surface-rule: rgba(255, 255, 255, .2);
+  --surface-2: rgba(255, 255, 255, .10); --control: rgba(255, 255, 255, .08); --control-border: rgba(255, 255, 255, .4); --control-on: var(--brand-300); --control-on-fg: #000;
+  --surface-shadow: 0 0 0 1px rgba(255, 255, 255, .14), 0 24px 60px rgba(0, 0, 0, .35); --surface-blur: none; --accent-a: var(--accent-300); --icon: var(--brand-300); --logo-filter: brightness(0) invert(1);
+  --ink: var(--n-900); --ink-2: var(--n-900); --body: var(--n-800); --muted: var(--n-600);
+  --card: #fff; --line: var(--n-300); --line-soft: var(--n-200);
+  --primary: var(--brand-700); --cyan: var(--brand-500); --lime: var(--accent-500);
+  --gradient-primary: linear-gradient(252deg, var(--brand-800) 25.96%, var(--brand-500) 44.95%, var(--brand-300) 74.04%);
+  --gradient-linear: linear-gradient(180deg, rgba(0, 0, 0, .16), transparent 50%, rgba(0, 0, 0, .8));
+
+  /* Schrift (DS): Rajdhani für h1/h2 und Kennzahlen, Source Sans 3 für Text, Buttons, Labels */
+  --font-brand: 'Rajdhani', sans-serif;
+  --font-plain: 'Source Sans 3 Variable', 'Source Sans 3', system-ui, sans-serif;
+  --font: var(--font-plain);
+  --w-plain: 380; --w-plain-bold: 665; --w-brand-bold: 700;
+
+  /* Radien und Schatten (DS) */
+  --r-s: 6px; --r-m: 8px; --r-max: 999px;
+  --r-card: 0; --r-tile: 0; --r-chip: 0; --r-sm: 8px;
+  --shadow-light: 0 0 12px 0 rgba(72, 72, 72, .15), 0 0 3px 0 rgba(0, 0, 0, .15);
+  --shadow-neutral: 0 0 24px 0 rgba(72, 72, 72, .25), 0 0 3px 0 rgba(0, 0, 0, .25);
+  --shadow-card: var(--shadow-light);
+  --shadow-overlay: 0 0 48px 0 rgba(0, 34, 40, .35), 0 0 3px 0 rgba(0, 0, 0, .25);
+  --shadow-btn: 0 .5px 2px 0 rgba(0, 0, 0, .45);
+  --ease: ease-in; --dur: .16s;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+/* Look „hell": neutral-100, weiße Flächen */
+#stage[data-look="light"] { --stage: var(--n-100); --fg: var(--n-900); --fg2: var(--n-800); --fg3: var(--n-700); --kick: var(--brand-700); --rule: var(--n-300);
+  --surface: #fff; --surface-fg: var(--n-900); --surface-fg2: var(--n-800); --surface-fg3: var(--n-700); --surface-kick: var(--brand-700); --surface-rule: var(--n-300);
+  --surface-2: var(--n-100); --control: #fff; --control-border: var(--brand-900); --control-on: var(--brand-300); --control-on-fg: #000;
+  --surface-shadow: var(--shadow-light); --accent-a: var(--brand-700); --icon: var(--brand-700); --logo-filter: none; --stage-solid: #fff; }
+/* Look „glass": Verlauf, transluzente Flächen */
+#stage[data-look="glass"] { --stage: linear-gradient(200deg, #00343b 0%, var(--brand-800) 55%, var(--brand-700) 100%);
+  --surface: rgba(255, 255, 255, .10); --surface-fg: #fff; --surface-fg2: rgba(255, 255, 255, .86); --surface-fg3: rgba(255, 255, 255, .64); --surface-kick: var(--accent-200); --surface-rule: rgba(255, 255, 255, .25);
+  --surface-2: rgba(255, 255, 255, .12); --control: rgba(255, 255, 255, .08); --control-border: rgba(255, 255, 255, .45); --control-on: #fff; --control-on-fg: var(--brand-900);
+  --surface-shadow: inset 0 0 0 1px rgba(255, 255, 255, .22), 0 20px 60px rgba(0, 0, 0, .25); --surface-blur: blur(18px); --accent-a: var(--accent-200); --icon: #fff; --kick: var(--accent-200); }
+html, body { margin: 0; height: 100%; background: #021f24; overflow: clip; }
+body { font-family: var(--font-plain); font-weight: var(--w-plain); color: var(--text-color); user-select: none; touch-action: manipulation; -webkit-font-smoothing: antialiased; }
+button { font: inherit; color: inherit; }
+h1, h2, h3, p { margin: 0; }
+
+#wrap { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; overflow: clip; }
+#stage { flex: 0 0 auto; overflow: clip;
+  position: relative; width: 1080px; height: 1920px; transform-origin: center center;
+  background: var(--stage);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .45); color: var(--fg);
+}
+#stage > .art { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+#stage[data-look="light"] > .tint { opacity: .5; }
+#stage > .tint { position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(80% 50% at 20% 0%, rgba(0, 155, 169, .35) 0%, rgba(0, 155, 169, 0) 60%), radial-gradient(60% 40% at 100% 100%, rgba(0, 99, 111, .6) 0%, rgba(0, 99, 111, 0) 60%); }
+
+/* ---------- Topbar: kein Balken, nur Logo, Pfad und Neu starten auf dem Hintergrund ---------- */
+/* Logo mit gleichem Abstand nach oben wie nach links (64 px) */
+.topbar { position: absolute; top: 0; left: 0; right: 0; height: 132px; display: flex; align-items: flex-start;
+  justify-content: space-between; padding: 64px 64px 0; box-sizing: border-box; z-index: 20; pointer-events: none; }
+.topbar .logo, .photo .topbar .logo { pointer-events: auto; cursor: pointer; height: 52px; width: auto; margin: 0; display: block; filter: var(--logo-filter); }
+
+/* ---------- Inhaltsbereich ---------- */
+#view { position: absolute; top: 132px; left: 0; right: 0; bottom: 0; z-index: 5; overflow: clip; --nav-h: 236px; }
+.screen { position: absolute; inset: 0; }
+
+/* ---------- Leiste unten: zwei Reihen. Oben vier Themen, unten schmal „Alle Bereiche" und „Berater", Icon und Text nebeneinander ---------- */
+.navbar { position: absolute; left: 64px; right: 64px; bottom: 32px; display: flex; flex-direction: column; gap: 10px; z-index: 20; }
+.navrow { display: flex; gap: 10px; }
+.navbar .ntile { all: unset; cursor: pointer; flex: 1 1 0; min-width: 0; height: 128px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  text-align: center; padding: 0 12px; border: 2px solid transparent; }
+.navbar .ntile svg { width: 44px; height: 44px; color: var(--icon); flex: 0 0 auto; }
+.navbar .ntile .l { font-size: 22px; line-height: 1.1; font-weight: var(--w-plain-bold); white-space: nowrap; color: var(--fg); }
+.navrow.slim { gap: 0; }
+.navrow.slim .ntile { height: 60px; flex: 0 0 auto; flex-direction: row; gap: 10px; padding: 0 30px; border: 0; }
+.navrow.slim .ntile.alle { margin-left: auto; width: 64px; padding: 0; }
+/* Hamburger und Berater zusammen so breit wie eine Themenkachel darüber (vier Kacheln, drei Lücken à 10 px) */
+.navrow.slim .ntile.berater { width: calc((100% - 30px) / 4 - 74px); margin-left: 10px; padding: 0; justify-content: center; }
+.navrow.slim .ntile svg { width: 26px; height: 26px; }
+.navrow.slim .ntile .l { font-size: 21px; }
+
+/* ---------- Pill (DS .btn: Pille, Chip 48 rechts, Pfeil-Kreis 24, Schrift plain 665) ---------- */
+.pill { all: unset; cursor: pointer; display: inline-flex; align-items: center; justify-content: space-between; gap: 18px;
+  height: 88px; padding: 0 8px 0 40px; border-radius: var(--r-max); font-family: var(--font-plain); font-weight: var(--w-plain-bold); font-size: 32px;
+  box-shadow: var(--shadow-btn); transition: transform .12s var(--ease), background-color var(--dur) var(--ease), color var(--dur) var(--ease); white-space: nowrap; }
+.pill .chip { width: 72px; height: 72px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; position: relative; }
+.pill .chip svg { width: 40px; height: 40px; }
+.pill.xl { height: 116px; font-size: 40px; padding: 0 10px 0 52px; gap: 22px; }
+.pill.xl .chip { width: 96px; height: 96px; } .pill.xl .chip svg { width: 48px; height: 48px; }
+.pill.m { height: 68px; font-size: 26px; padding: 0 6px 0 30px; gap: 14px; }
+.pill.m .chip { width: 56px; height: 56px; } .pill.m .chip svg { width: 30px; height: 30px; }
+.pill.brand { background: var(--brand-300); color: #000; } .pill.brand .chip { background: var(--brand-200); color: var(--brand-900); }
+.pill.brand:active { background: var(--brand-50); color: var(--brand-800); }
+.pill.accent { background: var(--accent-500); color: #000; } .pill.accent .chip { background: var(--accent-200); color: var(--accent-900); }
+.pill.accent:active { background: var(--accent-100); color: var(--accent-900); }
+.pill.petrol { background: var(--brand-900); color: #fff; } .pill.petrol .chip { background: var(--brand-800); color: #fff; }
+.pill.ghost { background: transparent; color: var(--fg); border: 2px solid var(--rule); box-shadow: none; } .pill.ghost .chip { background: rgba(255,255,255,.14); color: var(--fg); }
+.pill.outline { background: var(--control); color: var(--fg); border: 2px solid var(--control-border); box-shadow: none; } .pill.outline .chip { background: var(--fg); color: var(--stage-solid, var(--brand-900)); }
+.pill.outline:active { border-color: var(--brand-700); color: var(--brand-700); }
+
+/* ---------- Karten (DS tile: weiß, shadow, Radius 8 → 12 auf der Stele) ---------- */
+.card { position: relative; border-radius: var(--r-card); padding: 54px; }
+.kicker { font-family: var(--font-plain); font-size: 20px; font-weight: var(--w-plain-bold); letter-spacing: .1em; text-transform: uppercase; color: var(--kick); }
+
+.h2 { font-family: var(--font-brand); font-size: 50px; line-height: 1.15; font-weight: 700; color: var(--fg); }
+.body { font-family: var(--font-plain); font-size: 28px; line-height: 1.45; font-weight: var(--w-plain); color: var(--fg2); }
+.small { font-family: var(--font-plain); font-size: 23px; line-height: 1.4; font-weight: var(--w-plain); color: var(--fg3); }
+.num { font-family: var(--font-brand); font-weight: 700; color: var(--fg); }
+.display { font-family: var(--font-brand); font-weight: 700; line-height: .95; letter-spacing: -.015em; color: var(--fg); }
+.icochip { width: 72px; height: 72px; display: flex; align-items: center; justify-content: center;
+  background: transparent; color: var(--icon); flex: 0 0 auto; }
+.icochip svg { width: 64px; height: 64px; }
+.tag { display: inline-flex; align-items: center; height: 38px; padding: 0 15px; border-radius: var(--r-max); background: var(--accent-200);
+  color: var(--accent-900); font-size: 19px; font-weight: var(--w-plain-bold); letter-spacing: 0; }
+.tag.cyan { background: var(--brand-100); color: var(--brand-800); }
+
+/* Kacheln (DS tile mit Farbrahmen links) */
+.tile { all: unset; cursor: pointer; position: relative; border-radius: var(--r-tile); padding: 34px 36px;
+  display: flex; flex-direction: column; justify-content: space-between; border: 6px solid transparent;
+  overflow: hidden; transition: transform .12s var(--ease), border-color var(--dur) var(--ease); }
+.tile:active { border-color: var(--control-on); }
+.tile .t { font-family: var(--font-brand); font-size: 40px; font-weight: 700; color: var(--fg); line-height: 1.1; margin-top: 14px; }
+.tile .s { font-size: 24px; color: var(--fg2); font-weight: var(--w-plain); margin-top: 6px; line-height: 1.35; }
+.tile .go { margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; color: var(--fg); font-size: 24px; font-weight: var(--w-plain-bold);
+  position: relative; align-self: flex-start; padding-bottom: 4px; }
+.tile .go::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--accent-a); }
+.tile .go svg { width: 26px; height: 26px; color: var(--fg); }
+.tile.dim { opacity: .55; }
+
+/* Antwortflächen */
+.answers { display: grid; gap: 18px; }
+.answers.two { grid-template-columns: 1fr 1fr; }
+.answers.four { grid-template-columns: 1fr 1fr; }
+.ans { all: unset; cursor: pointer; height: 86px; border-radius: var(--r-max); background: var(--control); border: 1px solid var(--control-border);
+  display: flex; align-items: center; justify-content: center; font-size: 34px; font-weight: var(--w-plain-bold); color: var(--fg);
+  transition: transform .12s var(--ease), background var(--dur), border-color var(--dur); }
+.ans[aria-pressed="true"] { background: var(--control-on); border-color: var(--control-on); color: var(--control-on-fg); }
+
+/* Stufenmarken */
+.steps { display: flex; gap: 12px; }
+.steps button { all: unset; cursor: pointer; flex: 1; height: 96px; border-radius: 0; background: var(--control); border: 1px solid var(--control-border);
+  display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: var(--w-plain-bold); color: var(--fg); }
+.steps button[aria-pressed="true"] { background: var(--control-on); border-color: var(--control-on); color: var(--control-on-fg); }
+.steps button.truth { border-color: var(--accent-500); }
+
+/* Umschalter */
+.seg { display: inline-flex; background: var(--surface-2); border-radius: var(--r-max); padding: 6px; gap: 6px; }
+.seg button { all: unset; cursor: pointer; height: 76px; padding: 0 34px; border-radius: var(--r-max); font-size: 28px; font-weight: var(--w-plain-bold); color: var(--fg2); }
+.seg button[aria-pressed="true"] { background: var(--control-on); color: var(--control-on-fg); }
+
+/* Akkordeon */
+.acc-list { display: flex; flex-direction: column; }
+.acc-item { border-top: 1px solid var(--rule); }
+.acc-item button { all: unset; cursor: pointer; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 26px 0;
+  font-size: 30px; font-weight: var(--w-plain-bold); color: var(--fg); gap: 24px; }
+.acc-item button .pm { flex: 0 0 auto; width: 56px; height: 56px; border-radius: 50%; background: var(--surface-2); color: var(--fg);
+  display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 400; }
+.acc-item .a { padding: 0 0 28px; font-size: 30px; line-height: 1.5; color: var(--fg2); }
+
+/* Story-Scroll (S02) */
+.scroller { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; z-index: 2; }
+.scroller::-webkit-scrollbar { display: none; }
+.scroller .page { position: relative; z-index: 2; background: var(--stage-solid); padding-bottom: 120px; }
+.wmask { display: inline-block; vertical-align: bottom; padding-bottom: .06em; margin-bottom: -.06em; }
+.wmask .w { display: inline-block; }
+.curtain { position: sticky; bottom: 0; height: 1180px; z-index: 1; padding: 80px 64px 0; background: var(--accent-100); box-sizing: border-box; }
+/* Konzernbild im Fuß: sitzt bündig in der oberen rechten Ecke (ohne Innenabstand), drei Viertel der
+   Abschnittshöhe. Zwei Verläufe in der Fußfarbe blenden es nach links und nach unten aus, damit es
+   ohne Kante in die Fläche übergeht; oben und rechts steht es bündig an der Ecke. */
+/* `.curtain .…` statt `.curtain-photo`: Die allgemeine Regel `.photo { position: relative }` steht weiter
+   unten im Stylesheet und hat dieselbe Spezifität — sie würde den Absolutsatz sonst überschreiben. */
+.curtain .curtain-photo { position: absolute; right: 0; top: 0; width: 520px; height: 75%; background: var(--accent-100); }
+/* Die Höhe des Bildes (6 px kürzer als der Kasten) steht am Element selbst — der Kasten beschneidet
+   (overflow: hidden), ein überstehender Verlauf würde also mitbeschnitten und könnte die letzte Bildzeile
+   nicht abdecken; dort blitzte eine Pixellinie durch. Die freien 6 px liegen in der Fußfarbe des Kastens. */
+.curtain .curtain-photo::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, var(--accent-100) 0%, var(--accent-100) 7%, rgba(241, 255, 185, 0) 68%),
+              linear-gradient(0deg, var(--accent-100) 0%, var(--accent-100) 5%, rgba(241, 255, 185, 0) 54%); }
+/* Text und Bedienelemente liegen über dem Bild */
+.curtain > *:not(.curtain-photo) { position: relative; z-index: 1; }
+.sec { padding: 300px 64px; }   /* doppelter Abstand: Kartenreihe → Kombination → Häufige Fragen */
+/* Die Deckkraft dieser Abschnitte hängt am Scroll und ändert sich bei jedem Bild. Ohne eigene Ebene müsste
+   der Browser dafür den ganzen, rund 1800 px hohen Abschnitt neu zeichnen — die Überschrift lief dadurch
+   unrund, während sie selbst noch animiert wurde. Auf einer eigenen Ebene ist die Deckkraft reine
+   Compositor-Arbeit. Dasselbe für die Hülle des FAQ-Bildes, deren Beschnitt am Scroll hängt. */
+section.sec, .faq-shell { will-change: opacity; }
+/* Stories-Rail mit Stapel-Streifen (noho) */
+.railwrap { position: relative; }
+/* Lenis scrollt mit Nachkommastellen. Klebende Blöcke landen dadurch Bild für Bild auf einer anderen
+   Bruchteilposition, und der Browser rastert ihren Text jedes Mal neu — das sieht aus wie Wackeln.
+   Auf einer eigenen Compositor-Ebene wird einmal gerastert und danach nur noch verschoben. */
+.railstick, .curtain { will-change: transform; }
+/* Die Karten der Reihe werden bei jedem Bild verschoben und tragen einen 60 px weichen Schatten. Ohne
+   eigene Ebene müsste der Browser diesen Schatten bei jedem Bild neu zeichnen — das war das Ruckeln. */
+.rail-h .story { will-change: transform; }
+/* Band oben, Überschrift und Reihe darunter; die nächste Sektion schaut unten im Anschnitt herein */
+.railstick { position: sticky; top: 0; padding-top: 0; height: 1650px; box-sizing: border-box; display: flex; flex-direction: column; }
+.rail-h { position: relative; height: 560px; overflow: hidden; margin-top: 36px; }
+.story { all: unset; cursor: pointer; position: absolute; top: 0; height: 560px; overflow: hidden;
+  will-change: transform; box-shadow: -12px 0 30px rgba(0, 0, 0, .25); }
+.story .story-in { position: absolute; inset: 0; padding: 40px 44px; display: flex; flex-direction: column; }
+.story .story-foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
+.story .linkline { display: inline-flex; align-items: center; gap: 8px; font-size: 24px; font-weight: var(--w-plain-bold); color: var(--fg); border-bottom: 3px solid var(--accent-a); padding-bottom: 2px; }
+.story.focus { outline: 2px solid var(--accent-a); outline-offset: -2px; }
+
+/* Hero mit Bild bis zum Rand */
+.hero { position: relative; height: 1400px; overflow: visible; background: var(--stage-solid); }
+.hero-photo { position: absolute; inset: 0; background: var(--stage-solid); }
+/* Verlauf reicht 60 px über die Unterkante hinaus und ist ab 88 % voll deckend: die letzten ~60 px des Bildes sind sicher in Seitenfarbe */
+.hero-shade { position: absolute; left: -3px; right: -3px; top: -3px; bottom: -60px; z-index: 1; background: linear-gradient(180deg, rgba(0, 52, 59, .55) 0%, rgba(0, 52, 59, .05) 30%, rgba(0, 52, 59, .15) 55%, #00343b 88%, #00343b 100%); pointer-events: none; }
+.hero .topbar, .photo .topbar { z-index: 3; }
+.hero .topbar .logo, .photo .topbar .logo { filter: brightness(0) invert(1); }
+/* Textblock hängt unter die Bildkante in die blaue Fläche */
+.hero-text { position: absolute; left: 64px; right: 64px; bottom: -66px; z-index: 2; }
+
+/* Grundfläche in Seitenfarbe (nicht hell): an Subpixel-Kanten und beim Einblenden blitzt sonst ein heller Rand auf */
+.photo { position: relative; overflow: hidden; background: var(--stage-solid); }
+/* nur das Bild selbst, nicht das Logo der Kopfzeile im Bild */
+.photo > img { width: 100%; height: 120%; margin-top: -10%; object-fit: cover; display: block; }
+/* nur auf der scrollenden Wärmepumpen-Seite als eigene Ebene (Parallax); sonst wird das Bild mit dem Kasten pixelgenau beschnitten */
+.scroller .photo > img { will-change: transform; }
+.sqbtn { all: unset; cursor: pointer; width: 80px; height: 80px; background: var(--control); border: 1px solid var(--control-border); display: flex; align-items: center; justify-content: center; color: var(--fg); }
+.sheet .sqbtn { background: var(--surface-2); border: 1px solid var(--control-border); color: var(--fg); }
+.sqbtn svg { width: 34px; height: 34px; }
+.sqbtn[disabled] { opacity: .3; pointer-events: none; }
+
+/* Bottom-Sheet */
+.scrim { position: absolute; inset: 0; z-index: 30; background: rgba(0, 31, 36, .6); backdrop-filter: blur(6px); }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; z-index: 31; border-radius: 0; padding: 40px 64px 64px; max-height: 1300px; display: flex; flex-direction: column; }
+.sheet .head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; gap: 20px; }
+.sheet .head .nav { display: flex; gap: 12px; }
+.sheet .content { overflow-y: auto; scrollbar-width: none; flex: 1; }
+.sheet .content::-webkit-scrollbar { display: none; }
+.sheet .actions { display: flex; gap: 18px; margin-top: 30px; flex-wrap: wrap; }
+.center { position: absolute; inset: 0; z-index: 31; display: flex; align-items: center; justify-content: center; padding: 56px; }
+
+/* Timeout-Balken */
+.timeout { width: 860px; padding: 64px; display: grid; grid-template-columns: 1fr 220px; gap: 40px; align-items: center; box-shadow: var(--shadow-overlay); }
+.timeout .ring { position: relative; width: 220px; height: 220px; }
+.timeout .ring svg { transform: rotate(-90deg); }
+.timeout .ring .secs { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-brand); font-weight: 700; font-size: 84px; color: var(--fg); }
+
+/* Präsentationsmenü */
+.devbar { position: fixed; left: 12px; top: 12px; z-index: 100; display: flex; flex-wrap: wrap; gap: 6px; max-width: 420px;
+  background: rgba(0, 30, 36, .9); border-radius: 12px; padding: 10px; font-size: 13px; color: #eafcff; }
+.devbar button { all: unset; cursor: pointer; padding: 6px 10px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, .2); }
+.devbar button.on { background: var(--accent-500); color: #123; }
+
+/* Schwarmkarte */
+.swarm { all: unset; cursor: pointer; position: relative; width: 465px; height: 184px; box-sizing: border-box; padding: 26px 30px; display: flex; flex-direction: column; justify-content: flex-end; }
+.swarm .q { font-family: var(--font-brand); font-size: 30px; font-weight: 700; line-height: 1.12; color: var(--fg); }
+.swarm .k { font-size: 17px; font-weight: var(--w-plain-bold); letter-spacing: .1em; text-transform: uppercase; color: var(--kick); margin-bottom: 8px; }
+
+[data-reveal] { opacity: 0; }
+.fade-enter { animation: fadeUp .55s cubic-bezier(.25, .1, .1, 1) both; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Flächen (steht bewusst am Ende, damit es die all:unset-Regeln der Kacheln überschreibt) ---------- */
+.card, .sheet, .tile, .story, .swarm, .navbar .ntile, .timeout {
+  --fg: var(--surface-fg); --fg2: var(--surface-fg2); --fg3: var(--surface-fg3); --kick: var(--surface-kick); --rule: var(--surface-rule);
+  background: var(--surface); color: var(--surface-fg); box-shadow: var(--surface-shadow); backdrop-filter: var(--surface-blur); }
+.navbar .ntile.berater svg, .navbar .ntile.berater .l { color: var(--on-accent); }
+.navbar .ntile.berater[aria-current="page"] svg { color: var(--on-accent); }
+.curtain { --fg: var(--n-900); --fg2: var(--n-800); --fg3: var(--n-700); --kick: var(--accent-900); --rule: var(--n-300); color: var(--n-900); }
+.hero .hero-photo { position: absolute; }
+
+/* ---------- Touch-Hinweis ---------- */
+.touchhint { display: flex; flex-direction: column; justify-content: center; width: 100%; align-items: center; gap: 10px; text-align: center; color: var(--fg); font-size: 22px; font-weight: var(--w-plain-bold); }
+.touchhint .th-finger { position: relative; width: 104px; height: 104px; display: inline-flex; align-items: center; justify-content: center; color: currentColor; }
+/* Die Ringe laufen los, wenn die Hand am kleinsten ist (Mitte der Tipp-Bewegung, 1,7 s) */
+.touchhint .th-ring { position: absolute; inset: 2px; border-radius: 50%; border: 2.5px solid currentColor; opacity: 0; animation: thRing 3.4s ease-out 1.7s infinite; }
+.touchhint .th-ring.d { animation-delay: 1.95s; }
+.touchhint.down .th-finger > span:last-child, .touchhint.right .th-finger > span:last-child { animation: thDown 2.2s ease-in-out infinite; }
+.touchhint.right .th-finger > span:last-child { animation-name: thRight; }
+.touchhint.tap .th-finger > span:last-child { animation: thTap 3.4s ease-in-out infinite; }
+.touchhint .th-text { max-width: 420px; line-height: 1.2; }
+@keyframes thRing { 0% { transform: scale(.5); opacity: .85; } 70% { transform: scale(1.75); opacity: 0; } 100% { opacity: 0; } }
+@keyframes thDown { 0%, 100% { transform: translateY(-10px); } 50% { transform: translateY(10px); } }
+@keyframes thRight { 0%, 100% { transform: translateX(-10px); } 50% { transform: translateX(10px); } }
+@keyframes thTap { 0%, 100% { transform: scale(1) translateY(0); } 50% { transform: scale(.88) translateY(4px); } }
+/* Leiste: leicht durchsichtig, Inhalt scheint durch */
+.navbar .ntile[disabled] { opacity: .35; pointer-events: none; }
+
+/* Fußzeile: rein typografisch */
+.curtain { overflow: hidden; }
+
+.curtain > * { position: relative; z-index: 1; }
+
+/* Kleine Fragekarten und Leiste: durchsichtig mit Weichzeichner, der Hintergrund
+   scheint durch, die Stadt bleibt hinter den Karten spürbar. */
+.swarm { background: color-mix(in srgb, var(--surface) 70%, transparent); backdrop-filter: none; }
+/* Weichzeichner bewusst klein: Ein backdrop-filter muss den Hintergrund jedes Mal neu lesen und
+   falten, wenn sich dahinter etwas bewegt — auf der Wärmepumpen-Seite also bei jedem Scroll-Bild, und
+   das siebenmal, einmal je Kachel. Die Kosten wachsen mit dem Radius. 14 px statt 34 px, dafür etwas
+   mehr Deckung (56 % statt 46 %): optisch fast gleich, deutlich billiger. Wer den alten Look zurück
+   will, ändert nur diese eine Zeile. */
+.navbar .ntile { background: color-mix(in srgb, var(--surface) 56%, transparent); backdrop-filter: blur(14px) saturate(1.1); }
+.navbar .ntile.berater { background: color-mix(in srgb, var(--accent-500) 84%, transparent); }
+
+/* Lock-Screen: weiche Abdunklung an den Rändern, damit die Szene ruhig wirkt */
+#stage > .art::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(125% 70% at 50% 28%, rgba(0,0,0,0) 45%, rgba(0,20,25,.16) 100%); }
+
+/* Fragenreihe auf S01: Schiebeknöpfe und Tipp-Hinweis */
+.slbtn { all: unset; cursor: pointer; width: 84px; height: 84px; border-radius: 0; display: flex; align-items: center; justify-content: center;
+  background: var(--surface); color: var(--surface-fg); transition: transform .12s var(--ease), opacity .3s; }
+.slbtn:disabled { opacity: .3; pointer-events: none; }
+.slbtn svg { width: 40px; height: 42px; }
+.lockhint { transition: opacity .45s var(--ease); }
+.lockhint.off { opacity: 0; }
+
+/* Bogen-Regler: der Knopf pulsiert leicht, solange noch nichts gewählt ist */
+/* Der Knopf liegt sichtbar über dem Bogen: weicher Schatten nach unten */
+.arc-knob { filter: drop-shadow(0 5px 10px rgba(0, 45, 52, .38)) drop-shadow(0 1px 2px rgba(0, 45, 52, .26)); }
+/* Pulsierende Ringe um den Knopf als eigene Compositor-Ebene (nur transform und opacity) */
+.arc-pulse { position: absolute; transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; }
+.arc-pulse::before, .arc-pulse::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 3px solid var(--accent-500); opacity: 0; will-change: transform, opacity; animation: arcRing 2.4s ease-out infinite; }
+.arc-pulse::after { animation-delay: 1.2s; }
+@keyframes arcRing { 0% { transform: scale(.9); opacity: .6; } 70% { transform: scale(2.1); opacity: 0; } 100% { transform: scale(2.1); opacity: 0; } }
+
+/* S02 Eröffnung: Flächen im Blau-Spektrum über der Seite, ziehen per GSAP nach oben weg */
+.opener { position: absolute; inset: 0; z-index: 60; pointer-events: none; overflow: hidden; }
+.opener .op { position: absolute; inset: 0; will-change: transform; }
+.opener .op1 { background: var(--brand-900); }
+.opener .op2 { background: var(--brand-700); }
+.opener .op3 { background: var(--brand-500); }
+
+.card[data-flip-id] { backface-visibility: hidden; will-change: transform; box-shadow: 0 24px 70px rgba(0, 10, 14, .38), 0 4px 16px rgba(0, 10, 14, .22); }
+
+/* Startscreen: kleine Karten und Knöpfe ohne Schatten, die große Karte mit weichem Schatten */
+.swarm, .slbtn { box-shadow: none; }
+
+/* ---------- Druckzustand: Berührung sofort sichtbar (heller, leicht gedrückt), beim Loslassen weich zurück ---------- */
+button { transition: filter .16s ease-out; }
+button:active { filter: brightness(1.28) saturate(1.1); transition: none; }
+.ans:active, .pill:active, .sqbtn:active, .slbtn:active, .navbar .ntile:active, .tile:active, .story:active { transform: scale(.95); }
+.ans:active { background: var(--control-on); border-color: var(--control-on); color: var(--control-on-fg); }
+.navbar .ntile:active { background: color-mix(in srgb, var(--surface) 70%, #fff 30%); }
+.navbar .ntile.berater:active { background: var(--accent-300); }
+/* Fragekarten der Reihe sind FLIP-Ziele: kein Transform im Druckzustand, nur Fläche und Helligkeit */
+.swarm:active { background: color-mix(in srgb, var(--surface) 78%, #fff 22%); }
+.slbtn:active { background: color-mix(in srgb, var(--surface) 70%, #fff 30%); }
+
+/* Aktiver Zustand in der Leiste: Outline in Hellblau (statt Lime), auch für den Berater-Button */
+.navbar .ntile[aria-current="page"] { border-color: var(--brand-300); }
+.navbar .ntile.berater[aria-current="page"] { background: var(--accent-500); box-shadow: inset 0 0 0 4px var(--accent-200); }
+.navbar .ntile.berater[aria-current="page"] svg, .navbar .ntile.berater[aria-current="page"] .l { color: var(--on-accent); }
+/* Hamburger-Linien in der Textfarbe der Kacheln */
+.navrow.slim .ntile.alle svg { color: var(--fg); }
+/* Icon-Größe 40 im Chip erzwingen (die icochip-Regel setzt sonst 64) */
+.icochip .ic40 svg { width: 40px; height: 40px; display: block; }
+/* Grüne Flächen für die Enthüllung der Beraterseite (unten dunkel, oben hell) */
+.opener .og { position: absolute; inset: 0; will-change: transform; }
+.opener .og1 { background: var(--accent-800); }
+.opener .og2 { background: var(--accent-600); }
+.opener .og3 { background: var(--accent-300); }
+
+/* Große Antwortkacheln (Lautstärke-Frage): 2x2, Icon, Begriff, Dezibel als Untertext */
+.answers.big { grid-template-columns: 1fr 1fr; gap: 18px; }
+.ans.bigtile { height: 176px; border-radius: var(--r-card); flex-direction: column; justify-content: center; gap: 8px; padding: 0 20px; }
+.ans.bigtile .ic48 svg { width: 48px; height: 48px; display: block; color: var(--brand-300); }
+.ans.bigtile[aria-pressed="true"] .ic48 svg { color: var(--control-on-fg); }
+.ans.bigtile .t { font-size: 32px; font-weight: var(--w-plain-bold); line-height: 1.1; }
+.ans.bigtile .s { font-size: 20px; font-weight: var(--w-plain); color: var(--fg3); }
+.ans.bigtile[aria-pressed="true"] .s { color: var(--control-on-fg); opacity: .75; }
+
+/* S02 Hero: Bild läuft unten in die Seitenfarbe aus */
+.hero-fade { position: absolute; inset: 0 0 -3px 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 52, 59, 0) 0%, rgba(0, 52, 59, 0) 40%, #00343b 96%, #00343b 100%); }
+/* Easteregg: die Bildmarke als Wasserzeichen mittig auf der obersten Vorhangfläche (Übergang zur Wärmepumpe) */
+.opener .op-mark { position: absolute; left: 50%; top: 50%; width: 400px; height: auto; margin: -200px 0 0 -200px; color: #fff; opacity: 0; will-change: transform, opacity; }
+
+/* Randthemen auf „Alle Bereiche": Pillen mit Kontroll-Rahmen */
+.randbtn { all: unset; cursor: pointer; height: 72px; padding: 0 30px; border-radius: var(--r-max); background: var(--control); border: 2px solid var(--control-border); color: var(--fg); font-size: 26px; font-weight: var(--w-plain-bold); display: inline-flex; align-items: center; transition: background var(--dur), border-color var(--dur); }
+.randbtn:active { background: var(--control-on); border-color: var(--control-on); color: var(--control-on-fg); transform: scale(.95); }
+
+/* Fotos blenden nach dem Laden ein (kein Aufblitzen), Logo und Icons sind davon ausgenommen */
+.photo > img { opacity: 0; transition: opacity .55s ease-out; }
+.photo > img.loaded { opacity: 1; }
+
+
+/* Bild endet 6 px über der Unterkante des Kastens; die letzten Pixel sind ohnehin voll in Seitenfarbe (Verlauf ab 88 % deckend).
+   So kann an keiner Skalierung eine Bildzeile unter dem Verlauf hervorstehen. */
+.photo:has(> .hero-shade) > img { height: calc(110% - 6px); }   /* mit margin-top −10 %: Unterkante 6 px über dem Kasten */
+
+/* Textlink mit Chevron (Fußzeile „Zusammenfassung mitnehmen") */
+.textlink { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-size: 30px; font-weight: var(--w-plain-bold); color: var(--fg); padding: 22px 6px; border-bottom: 3px solid var(--accent-a); }
+.textlink svg { width: 24px; height: 24px; }
+
+/* Auf dem Startscreen läuft die Lichtpunkt-Szene hinter der Leiste: dort kein Weichzeichner,
+   sonst muss der Compositor die Kacheln bei jedem Bild der Szene neu weichzeichnen. */
+#stage:has(> .art) .navbar .ntile { backdrop-filter: none; background: color-mix(in srgb, var(--surface) 82%, transparent); }
+#stage:has(> .art) .navbar .ntile.berater { background: color-mix(in srgb, var(--accent-500) 94%, transparent); }

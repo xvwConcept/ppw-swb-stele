@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>SWB Stele · Prototyp</title>
+  <meta name="description" content="Klickbarer Prototyp der Touch-Stele für das Servicecenter der Stadtwerke Bonn." />
+  <meta name="theme-color" content="#00363d" />
+  <!-- Prototyp, keine öffentliche Seite: nicht indexieren -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2300363d'/%3E%3Crect x='9' y='7' width='14' height='18' rx='2' fill='%23d7f16f'/%3E%3C/svg%3E" />
+  <!--
+    Die Hausschriften liegen lokal (src/assets/fonts-swb, eingebunden über @font-face in styles.css).
+    Früher stand hier zusätzlich ein Google-Fonts-Link für Rajdhani: der lud dieselbe Schrift ein zweites
+    Mal von einem fremden Server, funktionierte auf der Stele ohne Netz gar nicht und hätte bei einem
+    Auftritt der Stadtwerke auch datenschutzrechtlich geklärt werden müssen. Ersatzlos entfernt.
+  -->
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

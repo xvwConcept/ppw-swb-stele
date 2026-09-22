@@ -1,0 +1,22 @@
+# Fotos (Wikimedia Commons, nur für den Prototyp; vor Kundeneinsatz durch SWB-Bildmaterial ersetzen)
+- waermepumpe-haus.jpg — „Air Source Heat Pump - Vaillant aroTherm Plus on a terraced house", Southend-on-Sea Borough Council, CC0
+- waermepumpe-eauto.jpg — „Waermepumpe Außeneinheit mit Elekroauto (cropped)", Mueller felix, CC BY-SA 4.0
+- waermepumpe-schnee.jpg — „Ecodan outdoor unit in the snow", PeterEastern, CC BY-SA 4.0
+- photovoltaik-haus.jpg — „Hamburg-Allermöhe, eco-houses with photovoltaic system", SuSanA Secretariat, CC BY 2.0
+- wallbox-laden.jpg — „BMW i3 home charging", Mariordo (Mario Roberto Durán Ortiz), CC BY-SA 4.0
+- bonn-skyline.jpg — „Skyline of Bonn Bundesviertel 21 Januar 2021", Stefan Oberreuter, CC BY-SA 4.0
+- waermepumpe-garten.jpg — Hero-Bild von homeandsmart.de (Artikel „Wärmepumpe Dimensionierung"), auf Wunsch von Max eingebaut. **Rechte ungeklärt, nur für den internen Prototyp; vor Kundeneinsatz durch SWB-Bildmaterial ersetzen.**
+- beratung.jpg — Beratungsbild (Berater und Kunde auf dem Dach mit Photovoltaik), von Max geliefert am 19.09.2026, Rechte beim Kunden prüfen.
+- bahn.jpg — SWB Stadtbahn Linie 66, von Max geliefert am 19.09.2026, Rechte beim Kunden prüfen.
+- wp-keyvisual.jpg — Key Visual Wärmepumpe (Mann auf der Anlage, grüner Himmel), von Max geliefert am 19.09.2026, Rechte beim Kunden prüfen.
+- wp-check.jpg — SWB-Berater mit Kunde im Heizungskeller (WP-Check), von Max geliefert am 19.09.2026, Rechte beim Kunden prüfen.
+- wp-haus-modern.jpg — Weiße Wärmepumpe an modernem Haus, von Max geliefert am 19.09.2026, Rechte beim Kunden prüfen.
+- pv-solarfeld.webp, emobil-laden.webp, bonn-energie-abend.webp, swb-bahn-stadt.webp, pv-familie.webp — Motive von release.stadtwerke-bonn.de (Startseite, Stand 19.09.2026), für Themenseiten im Prototyp. Nutzungsrechte liegen bei SWB, vor Kundeneinsatz freigeben lassen.
+
+- beratung-pv-dach.jpg: von Max geliefert (21.09.2026), zwei Beraterinnen mit Tablet auf dem Solardach; Hero der Beraterseite S03.
+- beratung-tisch.jpg: von Max geliefert (21.09.2026), Beratung am Tisch mit Kunde und Bildschirm, Hochkant; Hero der Beraterseite S03 rechts neben dem Text.
+- beratung-tisch-beethoven.webp: von Max gebaut (21.09.2026), Beethoven-Silhouette als Stromkabel über dem Beratungsfoto, mit Alpha; Hero der Beraterseite.
+- wp-handshake.jpg, wp-gruendach.jpg, wp-altbau.jpg, wp-schema.jpg, wp-faq-junge.jpg: von Max geliefert (21.09.2026) für die Wärmepumpen-Seite (Hero, Band „Was Sie wissen wollen", Altbau-Teaser, Funktions-Schema im Overlay, FAQ).
+- swb-eingang.jpg: von Max geliefert (21.09.2026), Eingang der Stadtwerke Bonn, Hochkant; Fußzeile „Sprechen Sie uns an" auf S02, rechts mit grünem Verlauf.
+- pv-montage.jpg, emobil-stecker.jpg, swb-kraftwerk.jpg: von Max geliefert (21.09.2026); Hero der Themenseiten Photovoltaik, E-Mobilität, Strom & Tarif.
+- wp-junge-panorama.jpg: von Max geliefert (21.09.2026), Panorama-Zuschnitt Junge mit Ball; Wärmepumpen-Kachel auf „Alle Bereiche".
